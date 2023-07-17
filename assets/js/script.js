@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function runGame(gameType) {
 
-	// Generated two random numbers between 1 and 25
+	// Generate two random numbers between 1 and 25
 	// Math.floor rounds down to the whole number
 	// Math.random generates random numbers
 
@@ -53,7 +53,7 @@ function runGame(gameType) {
 
 function checkAnswer() {
 
-	// Answer against the first element in
+	// Checks the answer against the first element in
 	// the returned calculateCorrectAnswer array
 
 	let userAnswer = parseInt(document.getElementById("answer-box").value);
@@ -143,9 +143,8 @@ function displayMultiplyQuestion(operand1, operand2) {
 // Division Question
 function displayDivisionQuestion (operand1, operand2) {
     
-    operand1 = operand1 * operand2;
-    document.getElementById("operand1").textContent = operand1;
-	document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
+	document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1;
 	document.getElementById("operator").textContent = "/";
 	
 }
